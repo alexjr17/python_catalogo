@@ -9,4 +9,4 @@ def create(request):
     return render(request, 'catalogos\create.html')
 
 def edit(request):
-    return render(request, 'catalogo.edit.html')
+    return render(request, 'catalogos\edit.html')
