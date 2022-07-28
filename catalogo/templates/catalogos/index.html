@@ -12,8 +12,15 @@
     <table>
         <thead>
             <tr>
+                <th>id</th>
                 <th>Nombre</th>
-                <th>funcion</th>
+                <th>talla</th>
+                <th>observaciones</th>
+                <th>marca</th>
+                <th>inventario</th>
+                <th>Imagen</th>
+                <th>Fecha</th>
+                <th>funciones</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +32,8 @@
                 <td>{{producto.observations}}</td>
                 <td>{{producto.brand}}</td>
                 <td>{{producto.inventory}}</td>
-                <!-- <td><img src="{{producto.image.url}}" alt=""></td> -->
+                <td>{% load static %}
+                    <img src="{{producto.image.url}}" alt="" width="100"></td>
                 <td>{{producto.date}}</td>
                 <td><a href="{% url 'catalogos_edit' %}">editar</a></td>
                 <td><button>Eliminar</button></td>

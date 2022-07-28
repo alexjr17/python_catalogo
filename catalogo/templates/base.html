@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="bg-blue-500 h-16 w-full">
+            <ul class="flex flex-row gap-x-6">
                 <li><a href="{% url 'catalogos_index' %}">index</a></li>
                 <li><a href="{% url 'catalogos_create' %}">create</a></li>
                 <li><a href="{% url 'catalogos_edit' %}">edit</a></li>
