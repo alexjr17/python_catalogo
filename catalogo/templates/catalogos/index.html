@@ -17,16 +17,20 @@
             </tr>
         </thead>
         <tbody>
+            {% for producto in productos %}
             <tr>
-                <td>Alex</td>
+                <td>{{producto.id}}</td>
+                <td>{{producto.name}}</td>
+                <td>{{producto.sixe}}</td>
+                <td>{{producto.observations}}</td>
+                <td>{{producto.brand}}</td>
+                <td>{{producto.inventory}}</td>
+                <!-- <td><img src="{{producto.image.url}}" alt=""></td> -->
+                <td>{{producto.date}}</td>
                 <td><a href="{% url 'catalogos_edit' %}">editar</a></td>
                 <td><button>Eliminar</button></td>
             </tr>
-            <tr>
-                <td>Dayana</td>
-                <td><a href="{% url 'catalogos_edit' %}">editar</a></td>
-                <td><button>Eliminar</button></td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>

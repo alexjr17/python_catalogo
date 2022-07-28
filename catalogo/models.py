@@ -1,6 +1,4 @@
-from ctypes import sizeof
-from distutils.command.upload import upload
-from unicodedata import name
+
 from django.db import models
 
 # Create your models here.
@@ -14,3 +12,10 @@ class Producto(models.Model):
     inventory = models.IntegerField(verbose_name="Inventory", default=0)
     image = models.ImageField(verbose_name="Image", upload_to='images/', null=True)
     date = models.DateTimeField(verbose_name="Date")
+
+    def __str__(self):
+        return "Nombre: " + self.name + " - " + "Invenatrio: " + str(self.inventory) + " - " "Fecha: " + str(self.date)
+
+    def delete(self, using=None, keep_parents=False):
+        self.image.storage.delete(self.image.name)
+        super().delete()
