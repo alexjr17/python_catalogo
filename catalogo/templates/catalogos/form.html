@@ -1,6 +1,16 @@
-<form action="" method="get">
-    <div>
-        <label for="">Nombre</label>
-        <input type="text" name="name">
-    </div>
-</form>
+<div class="mt-2">
+    <form action="/catalogos/store" method="post" enctype="multipart/form-data" class="bg-slate-400 rounded-md p-6 gap-3">
+        {% csrf_token %}
+        <!-- {{form_producto}} -->
+        {% for campo in form_producto %}
+        <div class="wrap_input">
+            <label for="">{{campo.label}}</label>
+            <input 
+            type="{{campo.field.widget.input_type}}" name="name">
+        </div>
+        {% endfor %}
+        <div class="wrap_input">
+            <button type="submit" class="btn">Guardar</button>
+        </div>
+    </form>
+</div>

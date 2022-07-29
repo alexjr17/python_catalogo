@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrap_input  {
+    @apply rounded-r-md text-sm grid grid-cols-1
+}
+input, textarea {
+    @apply py-2 px-2 focus:outline-blue-500 rounded-md focus:rounded-md bg-white
+}
+textarea{
+    @apply h-32 w-full
+}
+label {
+    @apply text-sm text-gray-700
+}
+.btn {
+    @apply bg-blue-600 p-2 rounded-md text-sm font-medium focus:ring-offset-2 focus:ring-indigo-500
+}
